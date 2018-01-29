@@ -8,5 +8,23 @@
         public string DescriptionHtml { get; set; }
         public Artist[] Artists { get; set; }
         public bool Favorite { get; set; }
+
+        public string DisplayText
+        {
+            get
+            {
+                return SerialTitle + " #" + IssueNumber; 
+            }
+        }
+
+        public string CoverImageFileName
+        {
+            get
+            {
+                return SerialTitle.Replace(" ", "-")
+                    .ToLower() + "-" + IssueNumber + ".jpg";
+            }
+        }
+
     }
 }
