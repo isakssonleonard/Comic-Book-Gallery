@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using ComicBookGallery.Models;
 using ComicBookGallery.Data;
 
 namespace ComicBookGallery.Controllers
@@ -11,6 +10,11 @@ namespace ComicBookGallery.Controllers
         public ComicBooksController()
         {
             _comicBookRepository = new ComicBookRepository();
+        }
+
+        public ActionResult Index()
+        {
+            return View(_comicBookRepository.GetComicBooks());
         }
 
         public ActionResult Detail(int? id)
